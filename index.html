@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penetrapit Kennel | Custom Website Demo</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#070403;
+color:white;
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+section{
+padding:90px 7%;
+}
+
+.demo-banner{
+background:linear-gradient(90deg,#4b160b,#c25a25,#4b160b);
+color:white;
+font-weight:900;
+text-align:center;
+padding:15px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.btn{
+display:inline-block;
+padding:17px 34px;
+border-radius:50px;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+.btn-main{
+background:#c25a25;
+color:white;
+}
+
+.btn-outline{
+border:1px solid #c25a25;
+color:#ff9b60;
+}
+
+.hero{
+min-height:100vh;
+display:grid;
+grid-template-columns:.95fr 1.05fr;
+align-items:center;
+gap:55px;
+background:
+radial-gradient(circle at top left,#c25a2526,transparent 32%),
+radial-gradient(circle at bottom right,#ffffff08,transparent 28%),
+#070403;
+}
+
+.hero-copy h1{
+font-size:clamp(62px,9vw,145px);
+line-height:.85;
+font-weight:900;
+text-transform:uppercase;
+margin-bottom:22px;
+}
+
+.hero-copy h1 span{
+display:block;
+color:#c25a25;
+}
+
+.hero-copy h2{
+font-size:22px;
+letter-spacing:5px;
+text-transform:uppercase;
+color:#ff9b60;
+margin-bottom:22px;
+}
+
+.hero-copy p{
+font-size:20px;
+line-height:1.8;
+color:#d9d0ca;
+max-width:620px;
+margin-bottom:32px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.hero-image{
+position:relative;
+}
+
+.hero-image img{
+width:100%;
+height:700px;
+object-fit:cover;
+border-radius:34px;
+}
+
+.hero-badge{
+position:absolute;
+right:26px;
+bottom:26px;
+background:rgba(0,0,0,.82);
+backdrop-filter:blur(12px);
+padding:22px;
+border-radius:20px;
+border:1px solid rgba(194,90,37,.35);
+max-width:310px;
+}
+
+.hero-badge strong{
+display:block;
+color:#ff9b60;
+font-size:22px;
+margin-bottom:8px;
+}
+
+.stud{
+background:#100907;
+}
+
+.stud-wrap{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:55px;
+align-items:center;
+}
+
+.stud-main-title{
+font-size:clamp(85px,13vw,210px);
+line-height:.82;
+font-weight:900;
+text-transform:uppercase;
+color:#c25a25;
+margin-bottom:35px;
+}
+
+.stud-copy span{
+color:#ff9b60;
+font-weight:bold;
+letter-spacing:5px;
+text-transform:uppercase;
+}
+
+.stud-copy h2{
+font-size:58px;
+margin:18px 0;
+text-transform:uppercase;
+}
+
+.stud-copy p{
+font-size:18px;
+line-height:1.9;
+color:#d7cdc7;
+margin-bottom:20px;
+}
+
+.stud-photo img{
+width:100%;
+height:850px;
+object-fit:cover;
+border-radius:34px;
+}
+
+.scorpion-strip{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+margin-top:32px;
+}
+
+.strip-card{
+background:#1b100c;
+border:1px solid rgba(194,90,37,.16);
+padding:22px;
+border-radius:18px;
+}
+
+.strip-card strong{
+display:block;
+color:#ff9b60;
+margin-bottom:8px;
+font-size:18px;
+}
+
+.gallery{
+background:#070403;
+}
+
+.gallery-head{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:40px;
+align-items:end;
+margin-bottom:50px;
+}
+
+.gallery-head span{
+color:#ff9b60;
+letter-spacing:5px;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+.gallery-head h2{
+font-size:80px;
+text-transform:uppercase;
+margin-top:14px;
+}
+
+.gallery-head p{
+color:#d4ccc7;
+line-height:1.8;
+font-size:18px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.gallery-grid img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:24px;
+}
+
+.gallery-grid img:nth-child(1){
+grid-column:span 2;
+}
+
+.gallery-grid img:nth-child(4){
+grid-column:span 2;
+}
+
+.productions{
+background:#100907;
+}
+
+.productions-header{
+text-align:center;
+margin-bottom:58px;
+}
+
+.productions-header span{
+color:#ff9b60;
+letter-spacing:5px;
+font-weight:bold;
+text-transform:uppercase;
+}
+
+.productions-header h2{
+font-size:82px;
+margin-top:14px;
+text-transform:uppercase;
+}
+
+.production-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.production-card{
+background:#1b100c;
+padding:42px;
+border-radius:28px;
+border:1px solid rgba(194,90,37,.14);
+}
+
+.production-card h3{
+font-size:32px;
+margin-bottom:15px;
+color:#ff9b60;
+}
+
+.production-card p{
+line-height:1.8;
+color:#d7cdc7;
+}
+
+.contact{
+position:relative;
+padding:145px 7%;
+text-align:center;
+}
+
+.contact::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.84)),
+url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1800&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.contact-content{
+position:relative;
+z-index:2;
+max-width:850px;
+margin:auto;
+}
+
+.contact span{
+color:#ff9b60;
+font-weight:bold;
+letter-spacing:5px;
+text-transform:uppercase;
+}
+
+.contact h2{
+font-size:88px;
+margin:20px 0;
+text-transform:uppercase;
+}
+
+.contact p{
+font-size:20px;
+line-height:1.9;
+color:#e0d7d1;
+margin-bottom:34px;
+}
+
+.footer{
+background:black;
+padding:55px 20px;
+text-align:center;
+}
+
+.footer h3{
+font-size:46px;
+margin-bottom:10px;
+}
+
+.footer .demo{
+color:#ff9b60;
+font-weight:bold;
+margin-bottom:14px;
+}
+
+.footer p{
+color:#8d8580;
+}
+
+@media(max-width:900px){
+
+.hero,
+.stud-wrap,
+.gallery-head,
+.production-grid{
+grid-template-columns:1fr;
+}
+
+.scorpion-strip{
+grid-template-columns:1fr 1fr;
+}
+
+.gallery-grid{
+display:block;
+}
+
+.gallery-grid img{
+height:auto;
+margin-bottom:18px;
+}
+
+.hero-image img,
+.stud-photo img{
+height:auto;
+}
+
+.hero-copy h1{
+font-size:64px;
+}
+
+.stud-main-title{
+font-size:78px;
+}
+
+.gallery-head h2,
+.productions-header h2,
+.contact h2{
+font-size:52px;
+}
+
+.hero-badge{
+position:relative;
+right:auto;
+bottom:auto;
+margin-top:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="demo-banner">
+🚨 CUSTOM WEBSITE DEMO CREATED FOR PENETRAPIT KENNEL 🚨
+</div>
+
+<section class="hero">
+
+<div class="hero-copy">
+
+<h1>
+PENETRAPIT
+<span>KENNEL</span>
+</h1>
+
+<h2>
+Brazilian Bull • Pedigree • Power
+</h2>
+
+<p>
+A serious Brazilian Bull program focused on structure, substance, temperament and strong bloodline direction.
+</p>
+
+<div class="hero-buttons">
+<a href="#scorpion" class="btn btn-main">Meet Scorpion</a>
+<a href="#contact" class="btn btn-outline">Contact Kennel</a>
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="hero.png" alt="Penetrapit Kennel">
+
+<div class="hero-badge">
+<strong>PENETRAPIT KENNEL</strong>
+Custom website concept created specifically to showcase the kennel, the stud and future productions.
+</div>
+
+</div>
+
+</section>
+
+<section class="stud" id="scorpion">
+
+<div class="stud-wrap">
+
+<div class="stud-copy">
+
+<span>Penetrapit Kennel Presents</span>
+
+<h1 class="stud-main-title">
+SCORPION
+</h1>
+
+<h2>
+Foundation Power
+</h2>
+
+<p>
+Scorpion represents the strength and direction behind Penetrapit Kennel. A powerful Brazilian Bull with heavy bone, impressive chest, strong headpiece and dominant presence.
+</p>
+
+<p>
+Built for serious productions, Scorpion brings the type, confidence and structure breeders look for in a standout stud.
+</p>
+
+<div class="scorpion-strip">
+
+<div class="strip-card">
+<strong>Power</strong>
+Heavy frame and strong substance.
+</div>
+
+<div class="strip-card">
+<strong>Structure</strong>
+Balanced Brazilian Bull build.
+</div>
+
+<div class="strip-card">
+<strong>Pedigree</strong>
+Selected bloodline direction.
+</div>
+
+<div class="strip-card">
+<strong>Stud</strong>
+Available for approved females.
+</div>
+
+</div>
+
+</div>
+
+<div class="stud-photo">
+<img src="stud.png" alt="Scorpion">
+</div>
+
+</div>
+
+</section>
+
+<section class="gallery">
+
+<div class="gallery-head">
+
+<div>
+<span>Penetrapit Kennel</span>
+<h2>Gallery</h2>
+</div>
+
+<p>
+A look at the style, power and presence behind the Penetrapit Kennel program.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+
+</section>
+
+<section class="productions">
+
+<div class="productions-header">
+
+<span>Penetrapit Productions</span>
+
+<h2>Built For Impact</h2>
+
+</div>
+
+<div class="production-grid">
+
+<div class="production-card">
+<h3>Structure</h3>
+<p>Balanced, powerful dogs with strong breed type.</p>
+</div>
+
+<div class="production-card">
+<h3>Temperament</h3>
+<p>Focused on confident, stable and manageable dogs.</p>
+</div>
+
+<div class="production-card">
+<h3>Substance</h3>
+<p>Heavy bone, chest, mass and unmistakable presence.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<div class="contact-content">
+
+<span>Contact Penetrapit Kennel</span>
+
+<h2>Let’s Talk</h2>
+
+<p>
+Interested in Scorpion, future productions or breeding opportunities? Contact Penetrapit Kennel today.
+</p>
+
+<a href="#" class="btn btn-main">Send Message</a>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<h3>PENETRAPIT KENNEL</h3>
+
+<div class="demo">
+CUSTOM WEBSITE DEMO
+</div>
+
+<p>
+This website was created as a personalized demonstration for Penetrapit Kennel.
+</p>
+
+</footer>
+
+</body>
+</html>
